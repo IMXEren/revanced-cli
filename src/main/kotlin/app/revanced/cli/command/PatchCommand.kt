@@ -303,6 +303,8 @@ internal object PatchCommand : Runnable {
             val patchesList = patches.toList()
             selection.filter { it.enabled != null }.associate {
                 val enabledSelection = it.enabled!!
+                println(enabledSelection.selector.name ?: enabledSelection.selector.index)
+                println(enabledSelection.options)
 
                 (enabledSelection.selector.name ?: patchesList[enabledSelection.selector.index!!].name!!) to
                     enabledSelection.options
